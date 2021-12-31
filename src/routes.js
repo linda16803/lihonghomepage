@@ -47,7 +47,7 @@ const dashboardRoutes = [
  
   {
     path: "/home",
-    name: "Home",
+    name: "Welcome 欢迎",
     rtlName: "home",
     icon: Language,
     component: Home,
