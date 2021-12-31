@@ -23,24 +23,17 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardIcon from "components/Card/CardIcon.js";
 
 import CardFooter from "components/Card/CardFooter.js";
-import Image from '../../assets/img/galaxystar.jpg';
-import Paper from '@material-ui/core/Paper';
+
 
 
 
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
 const useStyles = makeStyles(styles);
-const backgroundstyles = {
-  paperContainer: {
-      backgroundImage: `url(${Image})`
-  }
-};
 
 export default function Home() {
   const classes = useStyles();
   return (
-    <Paper style={backgroundstyles.paperContainer}>
     <div>
       <GridContainer>
         <GridItem xs={12} sm={6} md={3}>
@@ -293,6 +286,5 @@ export default function Home() {
         
       
     </div>
-    </Paper>
   );
 }

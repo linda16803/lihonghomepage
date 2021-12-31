@@ -144,11 +144,7 @@ export default function Notifications() {
   return (
     <Card>
       
-      <div className={classes.logoImage}>
-          <img src={logo} alt="logo" className={classes.img} />
-        </div>
-            
-          <div><h4></h4></div> 
+      
       <CardHeader color="primary">
         <h4 className={classes.cardTitleWhite}>Notifications</h4>
         <p className={classes.cardCategoryWhite}>

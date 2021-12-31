@@ -39,8 +39,7 @@ import Home from "views/Home/Home.js";
 import Maps from "views/Maps/Maps.js";
 import NotificationsPage from "views/Notifications/Notifications.js";
 
-// core components/views for RTL layout
-import RTLPage from "views/RTLPage/RTLPage.js";
+
 import UploadEcomp from "views/FileManager/UploadEcomp";
 
 
