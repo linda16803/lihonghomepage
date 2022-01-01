@@ -111,7 +111,7 @@ const dashboardRoutes = [
   },  
   {
     path: "/linda",
-    name: "Linda",
+    name: "Quick Reference",
     rtlName: "haha",
     icon: LibraryBooks,
     component: Linda,
