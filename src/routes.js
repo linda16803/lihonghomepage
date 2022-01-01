@@ -40,7 +40,7 @@ import Maps from "views/Maps/Maps.js";
 import NotificationsPage from "views/Notifications/Notifications.js";
 
 
-import UploadEcomp from "views/FileManager/UploadEcomp";
+import Career from "views/Career/Career.js";
 
 
 const dashboardRoutes = [
@@ -51,6 +51,14 @@ const dashboardRoutes = [
     rtlName: "home",
     icon: Language,
     component: Home,
+    layout: "/admin"
+  },
+  {
+    path: "/career",
+    name: "Career",
+    rtlName: "career",
+    icon: "content_paste",
+    component: Career,
     layout: "/admin"
   },
   {
@@ -85,14 +93,7 @@ const dashboardRoutes = [
     component: FileManager,
     layout: "/admin"
   },
-  {
-    path: "/uploadecomp",
-    name: "Upload Ecomp",
-    rtlName: "App",
-    icon: "content_paste",
-    component: UploadEcomp,
-    layout: "/admin"
-  },
+  
   {
     path: "/createdesigntemplate",
     name: "Create Design Template",
