@@ -42,38 +42,11 @@ export default function AdminConfig() {
 
   useEffect(() => {
     
-    axios.get(apiUrl + 'GENVALIDATION/getCollectionDetails/ENV/{}/?token='+token).then((response) => {
-      
-      if (response && response.data) {
-        let resultList = response.data
-        let returnList=[]
-        console.log(resultList)
-        resultList.forEach((items) => {
-          let count = Object.keys(items).length
-          let len = 12/(count-1)
-        
-          
-         /*** 
-          for (const key in items) {
-          if (items.hasOwnProperty(key) && !returnList.includes(key)) {
-            returnList.push(key)
-            console.log("%c "+key + " = " + items[key]);
-        }
-        }***/
-        })
-        setTableData(resultList)
-        setTableKey(returnList)
-        setLoading(false)
-      }
-    })
+    
+
   
   }, [])
-  if (loading) {
-   
-    return (
-    <div>
-      Loading...</div>);
-  } else {
+  
   return (
     <div>
      
@@ -156,5 +129,5 @@ export default function AdminConfig() {
       </GridContainer>
     </div>
   );
-          }
+     
 }

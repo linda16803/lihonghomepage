@@ -1,17 +1,29 @@
-import React from "react";
+import React,{ useEffect, useState, useDispatch }  from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
-import Quote from "components/Typography/Quote.js";
-import Muted from "components/Typography/Muted.js";
-import Primary from "components/Typography/Primary.js";
-import Info from "components/Typography/Info.js";
-import Success from "components/Typography/Success.js";
-import Warning from "components/Typography/Warning.js";
-import Danger from "components/Typography/Danger.js";
+import Code from "@material-ui/icons/Code";
+import Cloud from "@material-ui/icons/Cloud";
+// core components
+import GridItem from "components/Grid/GridItem.js";
+import GridContainer from "components/Grid/GridContainer.js";
+
+import Tasks from "components/Tasks/Tasks.js";
+import ListOnlys from "components/Tasks/Lists.js";
+import CustomTabs from "components/CustomTabs/CustomTabs.js";
+
 import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
+
 import CardBody from "components/Card/CardBody.js";
+import CardFooter from "components/Card/CardFooter.js";
+import InputLabel from "@material-ui/core/InputLabel";
+import CustomInput from "components/CustomInput/CustomInput.js";
+import Button from "components/CustomButtons/Button.js";
+import Table from "components/Table/Table.js";
+
+import { language,sourcecontrol, database,cicd,tools,experience } from "variables/careerlist";
+import { TextField } from "@material-ui/core";
+import { CloudCircle } from "@material-ui/icons";
 
 const styles = {
   typo: {
@@ -52,47 +64,98 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function Linda() {
+export default function Career() {
+  const [tablesData, setTableData] = useState([]);
+  
   const classes = useStyles();
   return (
-    <Card>
-      <CardHeader color="info">
-        <h4 className={classes.cardTitleWhite}>Software Developer</h4>
-        <p className={classes.cardCategoryWhite}>
-          
-        </p>
-      </CardHeader>
-      <CardBody>
-        <div >
-          <h4><a href='https://wiki.web.att.com/pages/viewpage.action?pageId=892147331' target="mywiki"> Lihong tSpace HomePage</a></h4>
-        </div>
-        <div >
-          <h4><a href='https://teams.microsoft.com/_#/files/Lab%20and%20Prod%20Environment%20Status?threadId=19%3A5b91aebdab804caeb49557592a3c6890%40thread.tacv2&ctx=channel&context=Lab%2520Environment&rootfolder=%252Fsites%252FAutomationToolsInternalTeam%252FShared%2520Documents%252FLab%2520Environment' target="environmentDoc"> Environment Docoument</a></h4>
-        </div>
-        <div >
-          <h4><a href='https://wiki.web.att.com/display/~lh9327/npm' target="mynpm">NPM reference</a></h4>
-        </div>
-        <div >
-          <h4><a href='https://wiki.web.att.com/display/~lh9327/Create+ADO+Pipeline' target="myado"> Create ADO Pipeline</a></h4>
-        </div>
-        <div >
-          <h4><a href='http://moose.web.att.com/' target="mymoose"> Moose</a></h4>
-        </div>
-        <div >
-          <h4><a href='https://wiki.web.att.com/display/~lh9327/mongodb' target="mymongo"> MongoDB</a></h4>
-        </div>
-        <div >
-          <h4><a href='https://wiki.web.att.com/display/~lh9327/Node.js+Reference+Page' target="mynodejs"> NodeJs reference</a></h4>
-        </div>
-        <div >
-          <h4><a href='https://wiki.web.att.com/display/~lh9327/git+reference' target="mygit"> Git reference</a></h4>
-        </div>
-        <div >
-          <h4><a href='https://wiki.web.att.com/display/~lh9327/Useful+Commands+for+self' target="mycmd"> Useful Commands</a></h4>
-        </div>
-
+    <div>
+     
+      <GridContainer>
+        <GridItem xs={12} sm={12} md={12}>
+          <CustomTabs
+            
+            headerColor="info"
+            tabs={[
+              {
+                tabName: "Experience",
+                tabIcon: Cloud,
+                tabContent: (
+                  <ListOnlys 
+                   tasksIndexes={[0, 1,2,3,4,5,6]}
+                   tasks={experience}
+                   />
+                )
+              },
+              {
+                tabName: "Education",
+                tabIcon: Cloud,
+                tabContent: (
+                  
+      <GridContainer>
+        <GridItem xs={12} sm={12} md={8}>
+          <Card>
+            
+            <CardBody>
+              <GridContainer>
+              <GridItem xs={12} sm={12} md={6}>
+               <h3>  Master of Computer Science </h3>
+               </GridItem>
+               <GridItem xs={12} sm={12} md={6}>
+                 <h4> <a href='https://www.osu.edu/' target='ohiostate'> Ohio State University</a>, Columbus, OH
+</h4>
+               </GridItem> 
+               <GridItem xs={12} sm={12} md={6}>
+               <h3>  Bachelor of Electrical Engineer </h3>
+               </GridItem>
+               <GridItem xs={12} sm={12} md={6}>
+                 <h4> <a href='https://www.zju.edu.cn/english/' target='ohiostate'> Zhejiang University</a>, Hangzhou, China
+</h4>
+               </GridItem> 
+               <GridItem xs={12} sm={12} md={6}>
+               <h3>  Data Science </h3>
+               </GridItem>
+               <GridItem xs={12} sm={12} md={6}>
+                 <h4> <a href='https://www.udacity.com/nanodegree' target='ohiostate'> Nano Degree</a>
+</h4>
+               </GridItem> 
+              </GridContainer>
+            </CardBody>
+            
+          </Card>
+        </GridItem>
+       
+      </GridContainer>
+    
+                )
+              },
+              {
+                tabName: "Language",
+                tabIcon: Code,
+                tabContent: (
+                  <ListOnlys 
+                   tasksIndexes={[0, 1,2,3,4,5,6]}
+                   tasks={language}
+                   />
+                )
+              },
+              {
+                tabName: "Technical Skills",
+                tabIcon: Code,
+                tabContent: (
+                  <ListOnlys
+                    tasksIndexes={[0, 1,2,3,4,5,6,7]}
+                    tasks={sourcecontrol}
+                  />
+                )
+              }
+              
+            ]}
+          />
+        </GridItem>
         
-      </CardBody>
-    </Card>
+      </GridContainer>
+    </div>
   );
+     
 }
