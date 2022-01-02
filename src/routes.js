@@ -62,6 +62,14 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
+    path: "/maps",
+    name: "Maps",
+    rtlName: "maps",
+    icon: "content_paste",
+    component: Maps,
+    layout: "/admin"
+  },
+  {
     path: "/dashboard",
     name: "Dashboard",
     rtlName: "模板",
