@@ -30,7 +30,7 @@ import UserProfile from "views/UserProfile/UserProfile.js";
 import TableList from "views/TableList/TableList.js";
 
 import Linda from "views/Linda/Linda.js";
-import FileManager from "views/FileManager/FileManager.js";
+import Images from "views/FileManager/Images.js";
 import AdminConfig from "views/AdminConfig/AdminConfig.js";
 import DesignTemplate from "views/FileManager/DesignTemplate.js";
 import Icons from "views/Icons/Icons.js";
@@ -94,11 +94,11 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/filemanager",
-    name: "File Manager",
+    path: "/images",
+    name: "Images",
     rtlName: "App",
     icon: "content_paste",
-    component: FileManager,
+    component: Images,
     layout: "/admin"
   },
   

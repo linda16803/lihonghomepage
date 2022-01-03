@@ -1,5 +1,5 @@
 const citylist=[
-{'href':'Maps/beijing', 'name':'Beijing, China'}, 
+{'href':'Images?beijing', 'name':'Beijing, China'}, 
 {'href':'Maps/yellowstone', 'name':'Yellow Stone'}, 
 {'href':'Maps/Alaska', 'name':'Alaska'},
 {'href': 'Maps/stonevalley', 'name': 'Stone Valley'},
