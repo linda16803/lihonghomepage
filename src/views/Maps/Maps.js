@@ -33,28 +33,21 @@ export default function Home() {
         <GridItem xs={12} sm={12} md={9}>
           
               <GridContainer>
-              <GridItem xs={12} sm={12} md={3}>
+              <GridItem xs={12} sm={12} md={8}>
              <h3 className={classes.cardTitleWhite}><b>Cities</b></h3>
                
                </GridItem>
-               <GridItem xs={12} sm={12} md={3}>
+               <GridItem xs={12} sm={12} md={4}>
              <h3 className={classes.cardTitleWhite}><b>National Parks</b></h3>
                
                </GridItem>
-               <GridItem xs={12} sm={12} md={3}>
-             <h3 className={classes.cardTitleWhite}><b>Cruises</b></h3>
-               
-               </GridItem>
-               <GridItem xs={12} sm={12} md={3}>
-             <h3 className={classes.cardTitleWhite}><b>Hikings</b></h3>
-               
-               </GridItem>
+              
+              
                {citylist.map((x) => (
-                 
-                 <GridItem xs={12} sm={12} md={3}>
-                   x.href ? (
-                 <h4 className={classes.cardTitleWhite}><b> <a href={x.href} target='ohiostate'className={classes.cardTitleWhite}> <b>{x.name}</b></a>
-</b></h4>) : .
+              <GridItem xs={12} sm={12} md={x.size}>
+                   
+                 <h4 className={classes.cardTitleWhite}><b> <a href={x.href} target='tours'className={classes.cardTitleWhite}> <b>{x.name}</b></a>
+</b></h4>
                </GridItem>
                ))}
                  
