@@ -63,7 +63,7 @@ const dashboardRoutes = [
   },
   {
     path: "/maps",
-    name: "Maps",
+    name: "Travel",
     rtlName: "maps",
     icon: "content_paste",
     component: Maps,

@@ -15,7 +15,7 @@ var language = [
       "2018 - Present: Lead Full Stack Developer",
       "DevOps for Design, Develop, Deployment for automation projection using Angular, React, NodeJS API, MongoDB, Itential automation platform ",
       "2014 - 2018: Priciple Software Engineer",
-      "Working on Ecomp for CICD deployment with Docker, Kubernete using Cloudify, Jenkins, Ansible, YAML, JSON, Java, Grove, Python, Perl",
+      "Working on Ecomp for CICD deployment with Docker, Kubernete using Cloudify, Jenkins, Ansible, YAML, JSON, Java, Groovy, Python, Perl",
       "Experience in creating DockerContainers from scratch",
       "2002 - 2014: Senior Software Engineer",
       "Support Network Correlation project using Java, C, C++, Perl, EMC SMART, ASL, Shell Script, AWK, Informix SQL, Oracle, JavaScript, XML, JavaServlet"
