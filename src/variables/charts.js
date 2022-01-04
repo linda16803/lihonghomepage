@@ -25,7 +25,7 @@ const dailySalesChart = {
       tension: 0
     }),
     low: 0,
-    high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+    high: 60000000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
     chartPadding: {
       top: 0,
       right: 0,
@@ -91,20 +91,20 @@ const emailsSubscriptionChart = {
     axisX: {
       showGrid: false
     },
-    low: 0,
-    high: 1000,
+    low: 80000,
+    high: 800000,
     chartPadding: {
       top: 0,
-      right: 5,
+      right: 2,
       bottom: 0,
       left: 0
     }
   },
   responsiveOptions: [
     [
-      "screen and (max-width: 640px)",
+      "screen and (max-width: 800px)",
       {
-        seriesBarDistance: 5,
+        seriesBarDistance: 10,
         axisX: {
           labelInterpolationFnc: function(value) {
             return value[0];

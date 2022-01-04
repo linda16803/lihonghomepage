@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useDispatch } from "react";
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
@@ -16,13 +16,13 @@ import CardHeader from "components/Card/CardHeader.js";
 
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-
+import CircularProgress from '@material-ui/core/CircularProgress';
+import axios from 'axios';
 
 
 import {
   dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart
+  emailsSubscriptionChart
 } from "variables/charts.js";
 
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
@@ -31,43 +31,60 @@ const useStyles = makeStyles(styles);
 
 export default function Dashboard() {
   const classes = useStyles();
+  const [tablesData, setTableData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    
+    axios.get('https://corona.lmao.ninja/v2/historical/USA?lastdays=20' ).then((response) => {
+      
+         //console.log(response.data.timeline)
+         const cases= response.data.timeline.cases
+        // console.log(cases)
+         const labels = []
+         const series = []
+         var history1=0
+         for(var attributename in cases){
+          console.log(attributename+": "+cases[attributename]);
+          if ( history1 ===0 ) history1 = cases[attributename]
+          else {
+            labels.push(attributename.slice(0,-3))
+            series.push(cases[attributename]-history1)
+            history1 = cases[attributename]
+          }
+         
+         
+         }
+          const data1 = {
+            'labels':labels,
+            'series': [series]
+          }
+          console.log(data1)
+          setTableData(data1);
+          setLoading(false);
+        
+      
+      
+    })
+  
+  
+  }, [])
+  if (loading) {
+   
+    return (
+    <div><CircularProgress />
+      Loading...</div>);
+  } else {
   return (
     <div>
      
       <GridContainer>
-        <GridItem xs={12} sm={12} md={4}>
+        
+        <GridItem xs={12} sm={12} md={12}>
           <Card chart>
             <CardHeader color="success">
               <ChartistGraph
                 className="ct-chart"
-                data={dailySalesChart.data}
-                type="Line"
-                options={dailySalesChart.options}
-                listener={dailySalesChart.animation}
-              />
-            </CardHeader>
-            <CardBody>
-              <h4 className={classes.cardTitle}>Active Jobs</h4>
-              <p className={classes.cardCategory}>
-                <span className={classes.successText}>
-                  <ArrowUpward className={classes.upArrowCardCategory} /> 55%
-                </span>{" "}
-                active jobs
-              </p>
-            </CardBody>
-            <CardFooter chart>
-              <div className={classes.stats}>
-                <AccessTime /> updated 4 minutes ago
-              </div>
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
-          <Card chart>
-            <CardHeader color="warning">
-              <ChartistGraph
-                className="ct-chart"
-                data={emailsSubscriptionChart.data}
+                data={tablesData}
                 type="Bar"
                 options={emailsSubscriptionChart.options}
                 responsiveOptions={emailsSubscriptionChart.responsiveOptions}
@@ -75,40 +92,25 @@ export default function Dashboard() {
               />
             </CardHeader>
             <CardBody>
-              <h4 className={classes.cardTitle}>Email Subscriptions</h4>
+              <h4 className={classes.cardTitle}>Daily Cases</h4>
               <p className={classes.cardCategory}>Last Campaign Performance</p>
             </CardBody>
-            <CardFooter chart>
-              <div className={classes.stats}>
-                <AccessTime /> campaign sent 2 days ago
-              </div>
-            </CardFooter>
+            
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
-          <Card chart>
-            <CardHeader color="danger">
-              <ChartistGraph
-                className="ct-chart"
-                data={completedTasksChart.data}
-                type="Line"
-                options={completedTasksChart.options}
-                listener={completedTasksChart.animation}
-              />
-            </CardHeader>
-            <CardBody>
-              <h4 className={classes.cardTitle}>Completed Tasks</h4>
-              <p className={classes.cardCategory}>Last Campaign Performance</p>
-            </CardBody>
-            <CardFooter chart>
-              <div className={classes.stats}>
-                <AccessTime /> campaign sent 2 days ago
-              </div>
-            </CardFooter>
-          </Card>
-        </GridItem>
+        
+              
+       
       </GridContainer>
-      
+      <ChartistGraph
+                className="ct-chart"
+                data={tablesData}
+                type="Bar"
+                distributeSeries='true'
+               
+               
+              /> 
     </div>
   );
+}
 }
