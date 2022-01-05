@@ -15,7 +15,7 @@ import CardFooter from "components/Card/CardFooter.js";
 
 import avatar from "assets/img/faces/marc.jpg";
 import { Favorite } from "@material-ui/icons/Favorite";
-import { PlayArrow, PlayCircle } from "@mui/icons-material";
+import { PlayArrow, PlayCircle, Stop, LibraryMusic } from "@mui/icons-material";
 import like from "assets/sounds/ZheShiJieNaMoDuoRen.m4a";
 import Table from "components/Table/Table.js";
 
