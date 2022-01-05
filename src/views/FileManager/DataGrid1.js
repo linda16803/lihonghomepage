@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
@@ -8,7 +8,6 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-
 
 import { DataGrid } from "@mui/x-data-grid";
 
@@ -94,7 +93,7 @@ export default function DataGrid1() {
         var lastdate = "";
         let indexId = 1;
         for (var attributename in cases) {
-         // console.log(attributename + ": " + cases[attributename]);
+          // console.log(attributename + ": " + cases[attributename]);
           if (history1 === 0) history1 = cases[attributename];
           else {
             let newcase = cases[attributename] - history1;
@@ -135,23 +134,23 @@ export default function DataGrid1() {
               <GridContainer>
                 <GridItem xs={12} sm={12} md={4}>
                   <h4 className={classes.cardTitleWhite}>Daily Cases</h4>
-
                 </GridItem>
-                
+
                 <GridItem xs={12} sm={12} md={4}>
-                <h5 className={classes.cardTitleWhite}>Updated {recentDate} </h5>
+                  <h5 className={classes.cardTitleWhite}>
+                    Updated {recentDate}{" "}
+                  </h5>
                 </GridItem>
               </GridContainer>
             </CardHeader>
-            <div style={{height: 850}}>
-
-            <DataGrid
-              rows={tablesData}
-              columns={columns}
-              pageSize={30}
-              rowsPerPageOptions={[5]}
-              disableSelectionOnClick
-            />
+            <div style={{ height: 850 }}>
+              <DataGrid
+                rows={tablesData}
+                columns={columns}
+                pageSize={30}
+                rowsPerPageOptions={[5]}
+                disableSelectionOnClick
+              />
             </div>
           </Card>
         </GridItem>
