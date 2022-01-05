@@ -236,28 +236,7 @@ export default function FileManager() {
         setRegionList(sortedRegionList)
       }
     })
-  /*
-    if ( regionname !== '') {
-    axios.get(apiUrl + 'ecompsystemApp/requestsPreloadMetaData/' + regionname + '/?token=' + token).then((response)  => {
-    if (response && response.data && response.data.length > 0) {
-      let sortedFileList = response.data.sort((a, b) => a['date'] > b['date'] ? - 1 : Number(a['date'] > b['date']))
 
-      setFileList(sortedFileList)
-
-      let tablelist = filelist.map((files) =>
-        [files.filename, files.type, files.status, files.date, <a href={apiUrl}>View</a>, 'Delete']
-      )
-      console.log(regionname);
-      console.log(tablelist);
-      setTableData(tablelist);
-      setLoading(false);
-    }
-
-    })
-    
-  }
-  */
-  
   }, [regionname])
 
 
