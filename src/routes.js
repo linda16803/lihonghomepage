@@ -27,6 +27,7 @@ import Language from "@material-ui/icons/Language";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
+import Fun from "views/FileManager/Sing.js";
 import TableList from "views/TableList/TableList.js";
 
 import Linda from "views/Linda/Linda.js";
@@ -70,6 +71,14 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
+    path: "/fun",
+    name: "Singing",
+    rtlName: "sing",
+    icon: Person,
+    component: Fun,
+    layout: "/admin"
+  },
+  {
     path: "/dashboard",
     name: "Dashboard",
     rtlName: "模板",
@@ -102,14 +111,7 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   
-  {
-    path: "/createdesigntemplate",
-    name: "Create Design Template",
-    rtlName: "App",
-    icon: "content_paste",
-    component: DataGrid1,
-    layout: "/admin"
-  },
+  
   {
     path: "/design",
     name: "Data Grid",
@@ -130,7 +132,7 @@ const dashboardRoutes = [
   {
     path: "/notifications",
     name: "Notifications",
-    rtlName: "通知",
+    rtlName: "App",
     icon: Notifications,
     component: NotificationsPage,
     layout: "/admin"

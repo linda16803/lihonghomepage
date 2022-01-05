@@ -57,7 +57,7 @@ export default function DesignTemplate() {
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["Region",  "Action"]}
+              tableHead={["Song", "URL",  "Action"]}
               tableData={[
                 ["region1", "Mobility", "vUSP"],
                 ["region2", "Mobility", "vUSP"],

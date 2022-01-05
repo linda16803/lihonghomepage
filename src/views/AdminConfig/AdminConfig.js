@@ -25,7 +25,7 @@ import Button from "components/CustomButtons/Button.js";
 import Table from "components/Table/Table.js";
 
 import { website, server } from "variables/general.js";
-import { apiUrl, token } from "variables/apiWrapper";
+
 import axios from 'axios';
 
 
