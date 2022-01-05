@@ -32,7 +32,7 @@ import TableList from "views/TableList/TableList.js";
 import Linda from "views/Linda/Linda.js";
 import Images from "views/FileManager/Images.js";
 import AdminConfig from "views/AdminConfig/AdminConfig.js";
-import DesignTemplate from "views/FileManager/DesignTemplate.js";
+import DataGrid1 from "views/FileManager/DataGrid1.js";
 import Icons from "views/Icons/Icons.js";
 import Home from "views/Home/Home.js";
 
@@ -80,7 +80,7 @@ const dashboardRoutes = [
   {
     path: "/user",
     name: "Setting",
-    rtlName: "用户",
+    rtlName: "App",
     icon: Person,
     component: UserProfile,
     layout: "/admin"
@@ -88,7 +88,7 @@ const dashboardRoutes = [
   {
     path: "/adminconfig",
     name: "AdminConfig",
-    rtlName: "config",
+    rtlName: "App",
     icon: Person,
     component: AdminConfig,
     layout: "/admin"
@@ -107,15 +107,15 @@ const dashboardRoutes = [
     name: "Create Design Template",
     rtlName: "App",
     icon: "content_paste",
-    component: DesignTemplate,
+    component: DataGrid1,
     layout: "/admin"
   },
   {
     path: "/design",
-    name: "Design Template",
-    rtlName: "App",
+    name: "Data Grid",
+    rtlName: "datagrid",
     icon: "content_paste",
-    component: DesignTemplate,
+    component: DataGrid1,
     layout: "/admin"
   },  
   {

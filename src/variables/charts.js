@@ -89,22 +89,23 @@ const emailsSubscriptionChart = {
   },
   options: {
     axisX: {
-      showGrid: false
+      showGrid: true
     },
-    low: 80000,
-    high: 800000,
+    low: 40000,
+    high: 1100000,
     chartPadding: {
       top: 0,
-      right: 2,
+      right: 0,
       bottom: 0,
-      left: 0
-    }
+      left: 20
+    },
+    height: '500px'
   },
   responsiveOptions: [
     [
       "screen and (max-width: 800px)",
       {
-        seriesBarDistance: 10,
+        seriesBarDistance: 5,
         axisX: {
           labelInterpolationFnc: function(value) {
             return value[0];
