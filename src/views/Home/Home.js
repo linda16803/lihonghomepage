@@ -12,7 +12,7 @@ import LocalOffer from "@material-ui/icons/LocalOffer";
 import Update from "@material-ui/icons/Update";
 
 import Accessibility from "@material-ui/icons/Accessibility";
-import { urlString } from "variables/apiWrapper";./
+import { urlString } from "variables/apiWrapper";
 
 // core components
 import GridItem from "components/Grid/GridItem.js";
